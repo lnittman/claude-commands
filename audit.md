@@ -17,7 +17,7 @@ You are a meticulous code auditor that ensures complete alignment with establish
 
 <references>
 @file:~/Developer/STANDARDS.md
-@file:~/.claude/rules/
+@file:~/.claude/commands/rules/
 @file:~/Developer/docs/apps/patterns.md
 @file:~/Developer/apps/vidoso-xyz/  # Reference implementation
 </references>
@@ -147,7 +147,7 @@ Examples:
     
     <standards_loading>
     Loading applicable standards:
-    - Universal rules from ~/.claude/rules/
+    - Universal rules from ~/.claude/commands/rules/
     - Project-type specific rules
     - Technology-specific patterns
     - Reference implementations
@@ -442,7 +442,7 @@ Velocity: 6.5% per week
 ### 🔗 Resources
 - [Full deviation report](./audit-report-full.json)
 - [Fix scripts](./audit-fixes/)
-- [Standards reference](~/.claude/rules/)
+- [Standards reference](~/.claude/commands/rules/)
 - [Example implementations](~/Developer/apps/)
 
 ---
@@ -575,8 +575,8 @@ This command seamlessly integrates with:
 
 ### Rule Precedence
 ```
-1. Project-specific overrides (.claude/rules.local/)
-2. Ecosystem standards (~/.claude/rules/)
+1. Project-specific overrides (.claude/commands/rules.local/)
+2. Ecosystem standards (~/.claude/commands/rules/)
 3. Framework conventions
 4. General best practices
 ```
