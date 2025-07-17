@@ -3,7 +3,7 @@
 Perform comprehensive documentation operations including audits, creation, enhancement, and maintenance of the [projectName]-docs repository.
 
 <documentation_audit_directive>
-You are tasked with conducting a thorough audit of a codebase's documentation state and creating a comprehensive, parallelized plan to establish or enhance a dedicated documentation repository that follows industry best practices and is optimized for AI-assisted development.
+You are tasked with conducting a thorough audit of a codebase's documentation state and creating a comprehensive plan to establish or enhance a dedicated documentation repository that follows industry best practices and is optimized for AI-assisted development.
 
 <components>
   <use>@thinking-blocks</use>
@@ -247,34 +247,33 @@ Proceeding with comprehensive documentation audit...
 <initial_analysis_phase>
 Before creating the plan, you MUST:
 
-1. **Launch parallel analysis tasks** to comprehensively audit the codebase:
-   ```
-   Task 1: "Analyze repository structure and technology stack"
+1. **Launch analysis tasks** to comprehensively audit the codebase:
+   
+   **Task 1: Analyze repository structure and technology stack**
    - Identify all repositories/packages in the working directory
    - Determine technology stack for each component
    - Map out inter-repository dependencies
    - Identify existing documentation locations
    
-   Task 2: "Audit existing documentation"
+   **Task 2: Audit existing documentation**
    - Find all .md files (excluding node_modules, .git, etc.)
    - Assess documentation quality and completeness
    - Identify documentation patterns and standards
    - Catalog what's documented vs. what's missing
    
-   Task 3: "Analyze codebase functionality"
+   **Task 3: Analyze codebase functionality**
    - Understand core features and components
    - Map API endpoints and data flows
    - Identify architectural patterns
    - Determine deployment configurations
    
-   Task 4: "Evaluate developer experience"
+   **Task 4: Evaluate developer experience**
    - Assess ease of onboarding
    - Review example code availability
    - Check for testing documentation
    - Identify pain points and gaps
-   ```
 
-2. **Synthesize findings** from all parallel tasks into a comprehensive understanding
+2. **Synthesize findings** from all tasks into a comprehensive understanding
 
 3. **Reference the documentation specification** at ~/Developer/docs/apps/docs.md for best practices
 </initial_analysis_phase>
@@ -283,7 +282,7 @@ Before creating the plan, you MUST:
 After analysis, create a detailed implementation plan that:
 
 1. **Follows the specification** from ~/Developer/docs/apps/docs.md exactly
-2. **Maximizes parallelization** with independent tasks that can run simultaneously
+2. **Organized efficiently** with independent tasks that can be executed systematically
 3. **Provides concrete deliverables** for each task with examples
 4. **Estimates effort realistically** based on codebase size and complexity
 5. **Prioritizes impact** - most valuable documentation first
@@ -313,63 +312,58 @@ Create a comprehensive plan with:
 
 ## Implementation Plan
 
-### Phase 1: Foundation (Parallel Tasks)
+### Phase 1: Foundation Tasks
 
 #### Task 1: Repository Setup
-```
-Description: Create [projectName]-docs repository with standard structure
-Deliverables:
+**Description**: Create [projectName]-docs repository with standard structure
+
+**Deliverables**:
 - Initialize repository with .docindex.json
 - Create directory structure per specification
 - Set up CI/CD for validation
 - Configure automated checks
 
-Estimated Effort: 0.5 developer days
-Dependencies: None (can start immediately)
-```
+**Estimated Effort**: 0.5 developer days
+**Dependencies**: None (can start immediately)
 
 #### Task 2: Architecture Documentation
-```
-Description: Document system architecture and technology stack
-Deliverables:
+**Description**: Document system architecture and technology stack
+
+**Deliverables**:
 - architecture/overview.md with system diagrams
 - architecture/stack.md with version matrix
 - architecture/data-flow.md with flow diagrams
 - ADRs for key decisions
 
-Estimated Effort: 2 developer days
-Dependencies: None (can start immediately)
-```
+**Estimated Effort**: 2 developer days
+**Dependencies**: None (can start immediately)
 
 #### Task 3: API Documentation
-```
-Description: Complete API reference documentation
-Deliverables:
+**Description**: Complete API reference documentation
+
+**Deliverables**:
 - api/rest.md with all endpoints
 - api/authentication.md with auth flows
 - api/errors.md with error codes
 - api/examples/ with code samples
 
-Estimated Effort: 3 developer days
-Dependencies: None (can start immediately)
-```
+**Estimated Effort**: 3 developer days
+**Dependencies**: None (can start immediately)
 
-### Phase 2: Development & Operations (Parallel Tasks)
+### Phase 2: Development & Operations Tasks
 
 [Continue with similar task breakdowns...]
 
-### Phase 3: Enhancement & Polish (Sequential/Parallel Mix)
+### Phase 3: Enhancement & Polish
 
 [Final tasks for completeness...]
 
 ## Execution Timeline
 
-```
-Week 1: Phase 1 - All foundation tasks in parallel
-Week 2: Phase 2 - Development and operations docs
-Week 3: Phase 3 - Polish and enhancement
-Week 4: Review, testing, and deployment
-```
+**Week 1**: Phase 1 - Foundation tasks
+**Week 2**: Phase 2 - Development and operations docs
+**Week 3**: Phase 3 - Polish and enhancement
+**Week 4**: Review, testing, and deployment
 
 ## Success Metrics
 
@@ -421,30 +415,29 @@ Week 4: Review, testing, and deployment
 
 <task_template>
 #### Task [Number]: [Descriptive Name]
-```
-Description: [Clear description of what this task accomplishes]
+**Description**: [Clear description of what this task accomplishes]
 
-Deliverables:
+**Deliverables**:
 - [Specific file/document to create/update]
 - [Another deliverable with details]
 
-Implementation Notes:
+**Implementation Notes**:
 - [Key consideration or approach]
 - [Important pattern to follow]
 
-Example Structure:
+**Example Structure**:
 [Show a brief example of expected output]
 
-Estimated Effort: [X developer days]
-Dependencies: [None | Task Y must complete first]
-Success Criteria:
+**Estimated Effort**: [X developer days]
+**Dependencies**: [None | Task Y must complete first]
+
+**Success Criteria**:
 - [ ] [Measurable outcome]
 - [ ] [Another measurable outcome]
-```
 </task_template>
 
 <execution_notes>
-1. Start with parallel analysis tasks to understand the full scope
+1. Start with analysis tasks to understand the full scope
 2. Create tasks that can be assigned to different team members
 3. Provide enough detail that someone unfamiliar with the codebase can execute
 4. Include quality checks and validation steps
@@ -485,4 +478,4 @@ Success Criteria:
 ```
 </context_output>
 
-Begin by acknowledging the audit request and current working directory, then launch the parallel analysis tasks. After receiving all results, synthesize findings and create the comprehensive implementation plan.
+Begin by acknowledging the audit request and current working directory, then launch the analysis tasks. After receiving all results, synthesize findings and create the comprehensive implementation plan.

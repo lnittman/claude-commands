@@ -203,13 +203,13 @@ Proceeding with this understanding...
     - [ ] Previous context loadable
     </pre_flight_check>
     
-    <parallel_opportunities>
-    Can analyze simultaneously:
+    <execution_opportunities>
+    Can analyze systematically:
     - Project structure scan
     - Git history analysis
     - Documentation review
     - Pattern extraction
-    </parallel_opportunities>
+    </execution_opportunities>
   </execution_thinking>
   
   <pattern_recognition>
@@ -263,7 +263,7 @@ Proceeding with this understanding...
 </extended_thinking>
 </thinking_process>
 
-<parallel_analysis_phase>
+<analysis_phase>
   - Primary goal: {{extracted_goal || "Initialize session with project context"}}
   - Focus area: {{focus_area || "General project understanding"}}
   - Session state: {{new_session || "Continuing existing session"}}
@@ -370,43 +370,35 @@ Initiating comprehensive context analysis...
 </verification_phase>
 
 <analysis_phase>
-Launch parallel analysis tasks to comprehensively understand the project:
+Launch analysis tasks to comprehensively understand the project:
 
-**Task 1: "Documentation Discovery"**
-```
+**Task 1: Documentation Discovery**
 - Find and read all CLAUDE.md files (project and user)
 - Locate [projectName]-docs/ repository if it exists
 - Read all README files in the project
 - Check for .docindex.json for AI navigation
 - Identify documentation patterns and standards
-```
 
-**Task 2: "Project Structure Analysis"**
-```
+**Task 2: Project Structure Analysis**
 - Map repository structure (monorepo, packages, apps)
 - Identify technology stack and frameworks
 - Find configuration files (package.json, tsconfig, etc.)
 - Understand build and deployment setup
 - Check for testing infrastructure
-```
 
-**Task 3: "Recent Activity Analysis"**
-```
+**Task 3: Recent Activity Analysis**
 - git log --oneline -30 (recent commits)
 - git diff HEAD~5 (recent changes)
 - git branch -a (active branches)
 - git status (current state)
 - Identify work in progress
-```
 
-**Task 4: "Code State Assessment"**
-```
+**Task 4: Code State Assessment**
 - Check for TODO/FIXME comments
 - Identify incomplete features
 - Review error logs if available
 - Assess code quality patterns
 - Find performance bottlenecks
-```
 
 $FOCUS
 </analysis_phase>
@@ -470,9 +462,7 @@ Focus examples:
 - **Documentation Health**: [Score/100]
 
 ### 📈 Recent Activity
-```
 [Recent meaningful commits with context]
-```
 
 ### 🎯 Current Focus Areas
 1. **[Feature/Area]**: [Brief status and next steps]
@@ -480,16 +470,9 @@ Focus examples:
 3. **[Feature/Area]**: [Brief status and next steps]
 
 ### ⚡ Quick Commands
-```bash
-# Development
-[project-specific dev command]
-
-# Testing  
-[project-specific test command]
-
-# Build
-[project-specific build command]
-```
+**Development**: [project-specific dev command]
+**Testing**: [project-specific test command]
+**Build**: [project-specific build command]
 
 ### 📋 Priority Tasks
 - [ ] [High priority task with context]
@@ -543,23 +526,17 @@ $FOCUS_OUTPUT
 - Focus: [Main areas of activity]
 
 **For Next Commands**:
-```json
-{
-  "command": "prime",
-  "project_name": "[name]",
-  "tech_stack": {
-    "frontend": "[framework]",
-    "backend": "[framework]",
-    "database": "[type]"
-  },
-  "current_focus": "[area]",
-  "suggested_next": [
-    "/user:build [specific task]",
-    "/user:vision explore [feature]",
-    "/user:design review components"
-  ]
-}
-```
+- Command: prime
+- Project name: [name]
+- Tech stack:
+  - Frontend: [framework]
+  - Backend: [framework]
+  - Database: [type]
+- Current focus: [area]
+- Suggested next:
+  - /user:build [specific task]
+  - /user:vision explore [feature]
+  - /user:design review components
 </context_output>
 </output_format>
 

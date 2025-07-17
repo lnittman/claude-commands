@@ -256,172 +256,153 @@ Proceeding with comprehensive brand development...
 </thinking_process>
 
 <analysis_phase>
-Launch parallel analysis tasks to understand the project's current state and potential:
+Launch analysis tasks to understand the project's current state and potential:
 
-**Task 1: "Product Analysis"**
-```
+**Task 1: Product Analysis**
 - Understand core value proposition
 - Identify unique differentiators
 - Analyze target audience and use cases
 - Map user journey and touchpoints
 - Assess market positioning potential
-```
 
-**Task 2: "Visual Identity Audit"**
-```
+**Task 2: Visual Identity Audit**
 - Analyze existing UI/UX patterns
 - Identify color usage and themes
 - Review typography choices
 - Assess iconography and imagery
 - Check animation and interaction patterns
-```
 
-**Task 3: "Content & Voice Analysis"**
-```
+**Task 3: Content & Voice Analysis**
 - Review all user-facing copy
 - Analyze error messages and feedback
 - Assess documentation tone
 - Review marketing materials (if any)
 - Identify voice inconsistencies
-```
 
-**Task 4: "Production Readiness Assessment"**
-```
+**Task 4: Production Readiness Assessment**
 - Check deployment configuration
 - Review security and privacy
 - Assess performance metrics
 - Analyze monitoring setup
 - Identify scaling considerations
-```
 
-**Task 5: "Inspiration Mining"**
-```
+**Task 5: Inspiration Mining**
 - Reference ~/Developer/docs/design patterns
 - Extract Dieter Rams principles
 - Apply Teenage Engineering aesthetics
 - Consider minimalist approaches
 - Identify industry best practices
-```
 </analysis_phase>
 
 <brand_creation_requirements>
 Create comprehensive brand documentation including:
 
 ### 1. Brand Strategy Document
-```markdown
-# [ProjectName] Brand Strategy
+**[ProjectName] Brand Strategy Structure**:
 
-## Mission Statement
+**Mission Statement**:
 [Concise, powerful statement of purpose]
 
-## Vision
+**Vision**:
 [Long-term aspiration and impact]
 
-## Core Values
+**Core Values**:
 1. **[Value]**: [How it manifests]
 2. **[Value]**: [How it manifests]
 3. **[Value]**: [How it manifests]
 
-## Brand Personality
+**Brand Personality**:
 - Archetype: [Explorer, Creator, Sage, etc.]
 - Traits: [5-7 personality traits]
 - Anti-traits: [What the brand is NOT]
 
-## Positioning Statement
+**Positioning Statement**:
 For [target audience] who [need/want statement],
 [ProjectName] is the [category] that [key benefit]
 because [reason to believe].
 
-## Unique Value Proposition
+**Unique Value Proposition**:
 [Clear, differentiating value statement]
-```
 
 ### 2. Visual Identity System
-```markdown
-# Visual Identity Guidelines
+**Visual Identity Guidelines**:
 
-## Logo System
+**Logo System**:
 - Primary mark: [Description and usage]
 - Secondary marks: [Variations]
 - Clear space: [Minimum spacing rules]
 - Misuse examples: [What not to do]
 
-## Color Palette
-### Primary Colors
+**Color Palette**:
+**Primary Colors**:
 - **[Color Name]**: #HEX / RGB / HSL
   - Usage: [When and where to use]
   - Accessibility: [WCAG compliance]
 
-### Secondary Colors
+**Secondary Colors**:
 [Extended palette with use cases]
 
-### Semantic Colors
+**Semantic Colors**:
 - Success: #HEX
 - Warning: #HEX
 - Error: #HEX
 - Info: #HEX
 
-## Typography
-### Font Stack
-```css
---font-display: [Display font stack];
---font-body: [Body font stack];
---font-mono: [Monospace font stack];
-```
+**Typography**:
+**Font Stack**:
+- Display: [Display font stack]
+- Body: [Body font stack]
+- Mono: [Monospace font stack]
 
-### Type Scale
+**Type Scale**:
 [Systematic sizing with use cases]
 
-## Spacing System
+**Spacing System**:
 [8-point grid or other systematic approach]
 
-## Component Styling
+**Component Styling**:
 [Key visual patterns and principles]
-```
 
 ### 3. Voice & Tone Guidelines
-```markdown
-# Voice & Tone Guide
+**Voice & Tone Guide**:
 
-## Brand Voice
+**Brand Voice**:
 Our voice is:
 - **[Attribute]**: [Example of how it sounds]
 - **[Attribute]**: [Example of how it sounds]
 - **[Attribute]**: [Example of how it sounds]
 
-## Tone Variations
-### Celebratory
-When: [User achievements, milestones]
-Example: "[Sample copy]"
+**Tone Variations**:
+**Celebratory**:
+- When: [User achievements, milestones]
+- Example: "[Sample copy]"
 
-### Informative
-When: [Instructions, documentation]
-Example: "[Sample copy]"
+**Informative**:
+- When: [Instructions, documentation]
+- Example: "[Sample copy]"
 
-### Empathetic
-When: [Errors, failures, issues]
-Example: "[Sample copy]"
+**Empathetic**:
+- When: [Errors, failures, issues]
+- Example: "[Sample copy]"
 
-## Writing Principles
+**Writing Principles**:
 1. **[Principle]**: [How to apply]
 2. **[Principle]**: [How to apply]
 
-## Vocabulary
-### Do Say
+**Vocabulary**:
+**Do Say**:
 - [Preferred terms and phrases]
 
-### Don't Say
+**Don't Say**:
 - [Terms to avoid and why]
 
-## Content Patterns
+**Content Patterns**:
 [Reusable content formulas]
-```
 
 ### 4. Production Deployment Guide
-```markdown
-# Production Readiness Checklist
+**Production Readiness Checklist**:
 
-## Pre-Launch
+**Pre-Launch**:
 - [ ] Domain and hosting secured
 - [ ] SSL certificates configured
 - [ ] Analytics implemented
@@ -431,7 +412,7 @@ Example: "[Sample copy]"
 - [ ] Legal compliance verified
 - [ ] Backup strategy implemented
 
-## Launch Assets
+**Launch Assets**:
 - [ ] Marketing website
 - [ ] Product screenshots
 - [ ] Demo video/GIF
@@ -439,39 +420,37 @@ Example: "[Sample copy]"
 - [ ] Press kit materials
 - [ ] Email templates
 
-## Post-Launch
+**Post-Launch**:
 - [ ] Monitoring dashboards
 - [ ] Support documentation
 - [ ] Feedback channels
 - [ ] Update strategy
 - [ ] Growth metrics tracking
-```
 
 ### 5. Brand Asset Library
-```
+**Brand Documentation Structure**:
 [projectName]-docs/brand/
-├── strategy/
-│   ├── brand-strategy.md
-│   ├── positioning.md
-│   └── messaging-framework.md
-├── visual/
-│   ├── logo/
-│   ├── colors/
-│   ├── typography/
-│   └── guidelines.md
-├── voice/
-│   ├── tone-guide.md
-│   ├── content-patterns.md
-│   └── examples/
-├── assets/
-│   ├── templates/
-│   ├── icons/
-│   └── marketing/
-└── production/
-    ├── launch-checklist.md
-    ├── deployment-guide.md
-    └── maintenance-plan.md
-```
+- strategy/
+  - brand-strategy.md
+  - positioning.md
+  - messaging-framework.md
+- visual/
+  - logo/
+  - colors/
+  - typography/
+  - guidelines.md
+- voice/
+  - tone-guide.md
+  - content-patterns.md
+  - examples/
+- assets/
+  - templates/
+  - icons/
+  - marketing/
+- production/
+  - launch-checklist.md
+  - deployment-guide.md
+  - maintenance-plan.md
 </brand_creation_requirements>
 
 <output_structure>
@@ -554,23 +533,18 @@ All brand documentation has been created in `[projectName]-docs/brand/`:
 - Asset library created
 
 **For Next Commands**:
-```json
-{
-  "command": "brand",
-  "brand_name": "[project-name]",
-  "mission": "[core-mission]",
-  "visual_style": "[design-philosophy]",
-  "voice_attributes": "[key-attributes]",
-  "documentation_path": "[projectName]-docs/brand/",
-  "phase": "brand_complete",
-  "suggested_next": [
-    "/user:build - Implement brand in production",
-    "/user:docs - Review brand documentation",
-    "/user:design - Apply brand to design system",
-    "/user:create - Build marketing materials"
-  ]
-}
-```
+- command: brand
+- brand_name: [project-name]
+- mission: [core-mission]
+- visual_style: [design-philosophy]
+- voice_attributes: [key-attributes]
+- documentation_path: [projectName]-docs/brand/
+- phase: brand_complete
+- suggested_next:
+  - /user:build - Implement brand in production
+  - /user:docs - Review brand documentation
+  - /user:design - Apply brand to design system
+  - /user:create - Build marketing materials
 </context_output>
 </output_structure>
 

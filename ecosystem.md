@@ -8,7 +8,7 @@ Analyze, standardize, and evolve your entire developer ecosystem from a meta per
   <use>@xml-transformer</use>
   <use>@verification-patterns</use>
   <use>@output-standards</use>
-  <use>@parallel-tasks</use>
+  <use>@task-execution</use>
 </components>
 
 <references>
@@ -104,13 +104,13 @@ Process $ARGUMENTS to detect operation type and scope:
   </analysis_phase>
   
   <execution_phase>
-    <parallel_analysis>
-    Analyzing multiple projects simultaneously:
+    <sequential_analysis>
+    Analyzing projects systematically:
     - Structure analysis
     - Dependency audit
     - Pattern extraction
     - Performance metrics
-    </parallel_analysis>
+    </sequential_analysis>
     
     <synthesis>
     Combining findings:
@@ -129,37 +129,29 @@ Process $ARGUMENTS to detect operation type and scope:
 
 When `audit` is specified:
 
-**Task 1: "Structure Analysis"**
-```
+**Task 1: Structure Analysis**
 - Map all project structures
 - Identify naming patterns
 - Check directory organization
 - Validate monorepo setup
-```
 
-**Task 2: "Dependency Analysis"**
-```
+**Task 2: Dependency Analysis**
 - Extract all package.json files
 - Compare dependency versions
 - Identify outdated packages
 - Check for security issues
-```
 
-**Task 3: "Pattern Analysis"**
-```
+**Task 3: Pattern Analysis**
 - Analyze code organization
 - Extract common utilities
 - Identify shared patterns
 - Detect anti-patterns
-```
 
-**Task 4: "Standards Compliance"**
-```
+**Task 4: Standards Compliance**
 - Compare against STANDARDS.md
 - Identify deviations
 - Calculate compliance score
 - Generate fix recommendations
-```
 
 ## Standards Operation
 
@@ -266,18 +258,14 @@ $RECOMMENDATIONS
 ### 📈 Metrics
 
 #### Dependency Health
-```
-Outdated packages: [count]
-Security issues: [count]
-Version mismatches: [count]
-```
+- Outdated packages: [count]
+- Security issues: [count]
+- Version mismatches: [count]
 
 #### Code Quality
-```
-TypeScript coverage: [%]
-Test coverage: [avg %]
-Documentation coverage: [%]
-```
+- TypeScript coverage: [%]
+- Test coverage: [avg %]
+- Documentation coverage: [%]
 
 ### 🎯 Action Items
 
@@ -308,18 +296,13 @@ $WISDOM_INSIGHTS
 **Projects**: [count analyzed]
 
 **Key Insights**:
-```json
-{
-  "operation": "$OPERATION",
-  "compliance_score": [percentage],
-  "patterns_found": [count],
-  "improvements_available": [count],
-  "next_steps": [
-    "specific recommendation 1",
-    "specific recommendation 2"
-  ]
-}
-```
+- operation: $OPERATION
+- compliance_score: [percentage]
+- patterns_found: [count]
+- improvements_available: [count]
+- next_steps:
+  - specific recommendation 1
+  - specific recommendation 2
 
 **Suggested Commands**:
 - `/user:ecosystem evolve [pattern]` - Propagate improvements
@@ -331,34 +314,24 @@ $WISDOM_INSIGHTS
 <operation_examples>
 
 ## Example: Full Audit
-```bash
-/user:ecosystem audit all
-```
-Analyzes entire ecosystem for patterns, compliance, and opportunities.
+**Command**: /user:ecosystem audit all
+**Result**: Analyzes entire ecosystem for patterns, compliance, and opportunities.
 
 ## Example: Standards Check
-```bash
-/user:ecosystem standards check apps/*
-```
-Verifies all turborepo projects against STANDARDS.md.
+**Command**: /user:ecosystem standards check apps/*
+**Result**: Verifies all turborepo projects against STANDARDS.md.
 
 ## Example: Dependency Evolution
-```bash
-/user:ecosystem evolve "next@15 tailwind@4"
-```
-Updates all projects to latest framework versions.
+**Command**: /user:ecosystem evolve "next@15 tailwind@4"
+**Result**: Updates all projects to latest framework versions.
 
 ## Example: Pattern Wisdom
-```bash
-/user:ecosystem wisdom patterns auth
-```
-Extracts all authentication patterns across projects.
+**Command**: /user:ecosystem wisdom patterns auth
+**Result**: Extracts all authentication patterns across projects.
 
 ## Example: Targeted Analysis
-```bash
-/user:ecosystem audit arbor-* kumori-*
-```
-Analyzes specific project families.
+**Command**: /user:ecosystem audit arbor-* kumori-*
+**Result**: Analyzes specific project families.
 
 </operation_examples>
 
@@ -370,7 +343,7 @@ Analyzes specific project families.
 5. Document findings in STANDARDS.md
 6. Create snapshot before evolution
 7. Test changes in one project first
-8. Use parallel execution for speed
+8. Execute systematically for clarity
 </best_practices>
 
 <error_handling>

@@ -192,12 +192,12 @@ Proceeding with build execution...
     - [ ] Patterns understood
     </pre_flight_check>
     
-    <parallel_opportunities>
-    Can execute simultaneously:
+    <execution_opportunities>
+    Can execute sequentially:
     - Infrastructure setup tasks
-    - Independent component builds
+    - Component builds
     - Test creation alongside implementation
-    </parallel_opportunities>
+    </execution_opportunities>
   </execution_thinking>
   
   <pattern_recognition>
@@ -262,11 +262,11 @@ Proceeding with build execution...
   4. Test and verify
   </build_plan>
   
-  <parallel_opportunities>
-  Can parallelize:
-  - {{parallel_task_group_1}}
-  - {{parallel_task_group_2}}
-  </parallel_opportunities>
+  <execution_sequence>
+  Will execute in order:
+  - {{task_group_1}}
+  - {{task_group_2}}
+  </execution_sequence>
 </planning_phase>
 
 <thinking_summary>
@@ -348,28 +348,22 @@ Assess build context from session and input:
 Process any provided input intelligently:
 
 **For URLs:**
-```markdown
 - Documentation sites → Extract implementation patterns
 - GitHub repos → Analyze code examples
 - Blog posts → Extract techniques
 - API docs → Understand integration patterns
-```
 
 **For Pasted Content:**
-```markdown
 - Code snippets → Adapt to current project
 - Terminal output → Debug or continue work
 - Error messages → Fix and proceed
 - Requirements → Translate to features
-```
 
 **For Mixed Input:**
-```markdown
 - Combine all sources into coherent understanding
 - Prioritize official documentation
 - Cross-reference with existing patterns
 - Extract actionable items
-```
 </input_processing>
 
 <intent_inference_phase>
@@ -407,107 +401,61 @@ If intent is unclear, ask ONE highly specific question:
 Skip questions if intent is reasonably clear.
 </intent_inference_phase>
 
-<parallel_execution_strategy>
-Leverage Claude's parallel tool capabilities:
+<sequential_execution_strategy>
+Execute tasks in clear sequence for visibility:
 
-**Parallel Setup Tasks:**
-```bash
-# Execute simultaneously
-Task 1: "Initialize project structure"
-Task 2: "Set up development environment"  
-Task 3: "Configure services and APIs"
-Task 4: "Create base documentation"
-```
+**Setup Tasks:**
+- Initialize project structure
+- Set up development environment  
+- Configure services and APIs
+- Create base documentation
 
-**Parallel Implementation:**
-```bash
-# Build multiple components at once
-Task 1: "Build authentication flow"
-Task 2: "Create database schema"
-Task 3: "Set up API routes"
-Task 4: "Implement base UI"
-```
+**Implementation Tasks:**
+- Build authentication flow
+- Create database schema
+- Set up API routes
+- Implement base UI
 
-**Parallel Testing:**
-```bash
-# Run all checks together
-Task 1: "Run unit tests"
-Task 2: "Check type safety"
-Task 3: "Validate API endpoints"
-Task 4: "Test UI components"
-```
-</parallel_execution_strategy>
+**Testing Tasks:**
+- Run unit tests
+- Check type safety
+- Validate API endpoints
+- Test UI components
+</sequential_execution_strategy>
 
 <build_execution_patterns>
 
 ### Pattern 1: Foundation Building
-```typescript
-// When starting fresh
-async function buildFoundation() {
-  await parallel([
-    createProjectStructure(),
-    initializeGitRepo(),
-    setupDevelopmentEnv(),
-    createBaseDocumentation()
-  ])
-  
-  await parallel([
-    installDependencies(),
-    configureLinting(),
-    setupTypeScript(),
-    createBaseComponents()
-  ])
-}
-```
+When starting fresh:
+1. Create project structure
+2. Initialize git repository
+3. Set up development environment
+4. Create base documentation
+5. Install dependencies
+6. Configure linting and formatting
+7. Set up TypeScript
+8. Create base components
 
 ### Pattern 2: Feature Implementation
-```typescript
-// When building specific features
-async function buildFeature(spec: FeatureSpec) {
-  // 1. Create structure
-  await createFeatureStructure(spec)
-  
-  // 2. Parallel implementation
-  await parallel([
-    buildDataModels(spec),
-    createAPIEndpoints(spec),
-    implementBusinessLogic(spec),
-    buildUIComponents(spec)
-  ])
-  
-  // 3. Integration
-  await integrateComponents(spec)
-  
-  // 4. Testing
-  await parallel([
-    writeUnitTests(spec),
-    createIntegrationTests(spec)
-  ])
-}
-```
+When building specific features:
+1. Create feature structure
+2. Build data models
+3. Create API endpoints
+4. Implement business logic
+5. Build UI components
+6. Integrate components
+7. Write unit tests
+8. Create integration tests
 
 ### Pattern 3: Integration Building
-```typescript
-// When integrating external services
-async function buildIntegration(docs: Documentation) {
-  // 1. Understand the API
-  const patterns = await analyzeDocumentation(docs)
-  
-  // 2. Create abstraction layer
-  await createServiceWrapper(patterns)
-  
-  // 3. Implement
-  await parallel([
-    createClientLibrary(),
-    buildErrorHandling(),
-    implementCaching(),
-    addTypeDefinitions()
-  ])
-  
-  // 4. Test
-  await createIntegrationTests()
-}
-```
+When integrating external services:
+1. Understand the API documentation
+2. Create abstraction layer
+3. Create client library
+4. Build error handling
+5. Implement caching strategy
+6. Add type definitions
+7. Create integration tests
 </build_execution_patterns>
 
 <adaptive_building>
@@ -541,7 +489,6 @@ Adapt to different scenarios:
 <continuous_building>
 Support iterative development:
 
-```markdown
 ## Build Loop
 1. Build requested feature/fix
 2. Run tests automatically
@@ -551,7 +498,6 @@ Support iterative development:
    - "Add tests for [edge case]?"
    - "Deploy to [environment]?"
    - "Document [what was built]?"
-```
 </continuous_building>
 
 <quality_assurance>
@@ -569,19 +515,10 @@ Every build includes:
 <post_build_verification>
   <automated_checks>
   Running verification suite:
-  ```bash
-  # 1. Test execution
-  pnpm test        # Capture all failures
-  
-  # 2. Type checking
-  pnpm typecheck   # Ensure type safety
-  
-  # 3. Linting
-  pnpm lint        # Code quality check
-  
-  # 4. Build verification
-  pnpm build       # Ensure it compiles
-  ```
+  1. Test execution - Capture all failures
+  2. Type checking - Ensure type safety
+  3. Linting - Code quality check
+  4. Build verification - Ensure it compiles
   </automated_checks>
   
   <edge_case_analysis>
@@ -644,52 +581,41 @@ Every build includes:
 **Decisions**: [Key choices made]
 
 ### ⚡ Execution Summary
-```bash
-# What was executed (parallel tasks shown)
-[Task 1] ✓ Created authentication system
-[Task 2] ✓ Set up database models  
-[Task 3] ✓ Implemented API endpoints
-[Task 4] ✓ Built UI components
-```
+Tasks executed in sequence:
+- ✓ Created authentication system
+- ✓ Set up database models  
+- ✓ Implemented API endpoints
+- ✓ Built UI components
 
 ### 📁 Created/Modified Files
-```
-✅ src/auth/index.ts
-✅ src/models/user.ts
-✅ src/api/auth.ts
-✅ src/components/Login.tsx
-✅ tests/auth.test.ts
-```
+- ✅ src/auth/index.ts
+- ✅ src/models/user.ts
+- ✅ src/api/auth.ts
+- ✅ src/components/Login.tsx
+- ✅ tests/auth.test.ts
 
 ### 🧪 Verification Results
-```
-# Automated Checks
-✓ Tests: 12 passing, 0 failing
-✓ Type check: No errors
-✓ Lint: 0 errors, 2 warnings
-✓ Build: Successful (2.3s)
+**Automated Checks:**
+- ✓ Tests: 12 passing, 0 failing
+- ✓ Type check: No errors
+- ✓ Lint: 0 errors, 2 warnings
+- ✓ Build: Successful (2.3s)
 
-# Edge Cases Verified
-✓ Empty state handling
-✓ Error boundaries in place
-⚠️ Network failure handling needs improvement
-✓ Input validation comprehensive
+**Edge Cases Verified:**
+- ✓ Empty state handling
+- ✓ Error boundaries in place
+- ⚠️ Network failure handling needs improvement
+- ✓ Input validation comprehensive
 
-# Requirements Match
-✓ All core features implemented
-✓ Performance targets met (< 3s build)
-⚠️ Accessibility: Partial (needs ARIA labels)
-✓ Security: Input sanitization implemented
-```
+**Requirements Match:**
+- ✓ All core features implemented
+- ✓ Performance targets met (< 3s build)
+- ⚠️ Accessibility: Partial (needs ARIA labels)
+- ✓ Security: Input sanitization implemented
 
 ### 🚀 Ready to Use
-```bash
-# Run the development server
-npm run dev
-
-# Or run tests
-npm test
-```
+Run the development server: `npm run dev`
+Or run tests: `npm test`
 
 ### 💡 What's Next?
 Based on what was built, consider:
@@ -747,22 +673,17 @@ Based on what was built, consider:
 - Next logical steps
 
 **For Next Commands**:
-```json
-{
-  "command": "build",
-  "features_built": "[list-of-features]",
-  "files_modified": "[count-and-paths]",
-  "test_status": "[passing/failing]",
-  "build_status": "[success/warnings]",
-  "phase": "implementation_active",
-  "suggested_next": [
-    "/user:build [next-feature] - Continue building",
-    "/user:docs - Document what was built",
-    "/user:design - Enhance UI/UX",
-    "/user:brand - Prepare for production"
-  ]
-}
-```
+- Command: build
+- Features built: [list-of-features]
+- Files modified: [count-and-paths]
+- Test status: [passing/failing]
+- Build status: [success/warnings]
+- Phase: implementation_active
+- Suggested next:
+  - /user:build [next-feature] - Continue building
+  - /user:docs - Document what was built
+  - /user:design - Enhance UI/UX
+  - /user:brand - Prepare for production
 </context_output>
 </output_format>
 
@@ -803,29 +724,23 @@ This command seamlessly integrates with:
 <advanced_features>
 
 ### URL Intelligence
-```markdown
-# Automatically handles:
+Automatically handles:
 - GitHub repos → Clone and analyze
 - Documentation → Extract patterns
 - Stack Overflow → Understand solution
 - Blog posts → Apply techniques
 - API docs → Implement integration
-```
 
 ### Smart Inference
-```markdown
-# Understands context like:
-"Here's how Stripe does it [URL]" → Implement payment flow
-"This error keeps happening [paste]" → Fix and prevent
-"Make it like this [screenshot]" → Build matching UI
-"Add Supabase [docs URL]" → Full integration
-```
+Understands context like:
+- "Here's how Stripe does it [URL]" → Implement payment flow
+- "This error keeps happening [paste]" → Fix and prevent
+- "Make it like this [screenshot]" → Build matching UI
+- "Add Supabase [docs URL]" → Full integration
 
 ### Continuous Flow
-```markdown
-# Keeps building until done:
+Keeps building until done:
 Build → Test → Fix → Build more → Test → Ship
-```
 </advanced_features>
 
 $ARGUMENTS

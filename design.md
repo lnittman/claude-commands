@@ -265,68 +265,55 @@ Proceeding with comprehensive design system analysis...
 </thinking_process>
 
 <analysis_phase>
-Launch parallel analysis tasks to comprehensively audit the design system:
+Launch analysis tasks to comprehensively audit the design system:
 
-**Task 1: "Component Architecture Analysis"**
-```
+**Task 1: Component Architecture Analysis**
 - Map all UI components and their relationships
 - Identify component composition patterns
 - Analyze prop interfaces and type definitions
 - Document component dependencies
 - Assess component reusability and modularity
-```
 
-**Task 2: "Styling System Audit"**
-```
+**Task 2: Styling System Audit**
 - Analyze CSS/styling methodology (CSS-in-JS, Tailwind, etc.)
 - Extract color variables and usage patterns
 - Document spacing and sizing systems
 - Map typography scales and font usage
 - Identify animation and transition patterns
-```
 
-**Task 3: "Screenshot Reference Analysis"**
-```
+**Task 3: Screenshot Reference Analysis**
 - Find all screenshot references in the codebase
 - Analyze UI patterns copied from other apps
 - Document inspiration sources
 - Identify adaptation strategies
 - Map reference to implementation
-```
 
-**Task 4: "Interaction Pattern Documentation"**
-```
+**Task 4: Interaction Pattern Documentation**
 - Catalog all interaction states (hover, focus, active)
 - Document gesture and touch interactions
 - Map keyboard navigation patterns
 - Analyze loading and error states
 - Review transition and animation logic
-```
 
-**Task 5: "Accessibility & Performance Audit"**
-```
+**Task 5: Accessibility & Performance Audit**
 - Check ARIA implementation patterns
 - Analyze color contrast ratios
 - Document keyboard navigation
 - Review responsive breakpoints
 - Assess rendering performance patterns
-```
 
-**Task 6: "Design Token Extraction"**
-```
+**Task 6: Design Token Extraction**
 - Extract all design variables
 - Map token relationships
 - Identify token categories
 - Document token usage patterns
 - Create token hierarchy
-```
 </analysis_phase>
 
 <documentation_requirements>
 Create comprehensive design documentation including:
 
 ### 1. Design System Architecture
-```markdown
 # Design System Architecture
 
 ## System Overview
@@ -335,33 +322,30 @@ Create comprehensive design documentation including:
 - **Organization**: [How components are structured]
 
 ## Component Hierarchy
-```
-components/
-├── primitives/     # Base building blocks
-│   ├── Box
-│   ├── Text
-│   └── ...
-├── elements/       # Single-purpose components
-│   ├── Button
-│   ├── Input
-│   └── ...
-├── patterns/       # Composite components
-│   ├── Card
-│   ├── Modal
-│   └── ...
-├── layouts/        # Page-level components
-│   ├── Header
-│   ├── Sidebar
-│   └── ...
-└── templates/      # Full page templates
-```
+- components/
+  - primitives/     # Base building blocks
+    - Box
+    - Text
+    - ...
+  - elements/       # Single-purpose components
+    - Button
+    - Input
+    - ...
+  - patterns/       # Composite components
+    - Card
+    - Modal
+    - ...
+  - layouts/        # Page-level components
+    - Header
+    - Sidebar
+    - ...
+  - templates/      # Full page templates
 
 ## Composition Patterns
 [How components combine and compose]
 
 ## State Management
 [How component state is handled]
-```
 
 ### 2. Component Documentation
 ```markdown
@@ -378,29 +362,20 @@ components/
 - **Ghost**: [Usage and visual description]
 
 ### Props Interface
-```typescript
-interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'ghost'
-  size?: 'sm' | 'md' | 'lg'
-  disabled?: boolean
-  loading?: boolean
-  onClick?: () => void
-  children: ReactNode
-}
-```
+**ButtonProps interface**:
+- variant?: 'primary' | 'secondary' | 'ghost'
+- size?: 'sm' | 'md' | 'lg'
+- disabled?: boolean
+- loading?: boolean
+- onClick?: () => void
+- children: ReactNode
 
 ### Usage Examples
-```tsx
-// Primary action
-<Button variant="primary" onClick={handleSubmit}>
-  Submit
-</Button>
+**Primary action**:
+Button with variant="primary" and onClick={handleSubmit}
 
-// Loading state
-<Button loading>
-  Processing...
-</Button>
-```
+**Loading state**:
+Button with loading prop showing "Processing..."
 
 ### Implementation Details
 [Technical implementation notes]
@@ -417,49 +392,32 @@ interface ButtonProps {
 
 ## Color Tokens
 ### Primitive Colors
-```typescript
-const colors = {
-  gray: {
-    50: '#fafafa',
-    100: '#f4f4f5',
-    // ... full scale
-    900: '#18181b',
-  },
-  brand: {
-    primary: '#3b82f6',
-    secondary: '#8b5cf6',
-  }
-}
-```
+**Color palette**:
+- Gray scale: 50 (#fafafa) through 900 (#18181b)
+- Brand colors:
+  - Primary: #3b82f6
+  - Secondary: #8b5cf6
 
 ### Semantic Colors
-```typescript
-const semantic = {
-  background: {
-    primary: 'var(--gray-50)',
-    secondary: 'var(--gray-100)',
-  },
-  text: {
-    primary: 'var(--gray-900)',
-    secondary: 'var(--gray-600)',
-  },
-  border: {
-    default: 'var(--gray-200)',
-    focus: 'var(--brand-primary)',
-  }
-}
-```
+**Background colors**:
+- Primary: var(--gray-50)
+- Secondary: var(--gray-100)
+
+**Text colors**:
+- Primary: var(--gray-900)
+- Secondary: var(--gray-600)
+
+**Border colors**:
+- Default: var(--gray-200)
+- Focus: var(--brand-primary)
 
 ## Spacing Tokens
-```typescript
-const spacing = {
-  px: '1px',
-  0.5: '0.125rem', // 2px
-  1: '0.25rem',    // 4px
-  2: '0.5rem',     // 8px
-  // ... full scale
-}
-```
+**Spacing scale**:
+- px: 1px
+- 0.5: 0.125rem (2px)
+- 1: 0.25rem (4px)
+- 2: 0.5rem (8px)
+- [Full scale continues...]
 
 ## Typography Tokens
 [Font families, sizes, weights, line-heights]
@@ -507,47 +465,31 @@ const spacing = {
 ## Styling Architecture
 
 ### CSS-in-JS Setup
-```typescript
-// Theme configuration
-const theme = {
-  colors,
-  spacing,
-  typography,
-  breakpoints,
-}
+**Theme configuration structure**:
+- colors object
+- spacing object
+- typography object
+- breakpoints object
 
-// Component styling
-const StyledButton = styled.button<ButtonProps>`
-  ${({ theme, variant }) => css`
-    background: ${theme.colors[variant]};
-    padding: ${theme.spacing[3]} ${theme.spacing[6]};
-  `}
-`
-```
+**Component styling pattern**:
+- Use styled-components with theme access
+- Apply theme tokens for consistency
+- Handle variant props for different styles
 
 ### Tailwind CSS v4 Configuration
-```css
-/* globals.css - No config file needed in v4 */
-@import "tailwindcss";
-
-@theme inline {
-      colors: designTokens.colors,
-      spacing: designTokens.spacing,
-    }
-  }
-}
-```
+**Global styles setup**:
+- Import tailwindcss in globals.css
+- Define inline theme with design tokens
+- Map colors and spacing to design system
 
 ## Component Patterns
 
 ### Compound Components
-```typescript
-// Pattern implementation
-const Card = ({ children }) => {...}
-Card.Header = CardHeader
-Card.Body = CardBody
-Card.Footer = CardFooter
-```
+**Pattern implementation**:
+- Main Card component as container
+- Card.Header for header content
+- Card.Body for main content
+- Card.Footer for footer actions
 
 ### Render Props
 [Pattern examples]
@@ -598,9 +540,7 @@ Card.Footer = CardFooter
 - **Performance Grade**: [Assessment]
 
 ### 🏗️ Architecture Summary
-```
 [Visual representation of component hierarchy]
-```
 
 ### 🎯 Key Findings
 
@@ -621,16 +561,12 @@ Card.Footer = CardFooter
 2. [App/Website] - [What patterns]
 
 ### 🎨 Design Token Summary
-```typescript
-// Core token categories
-tokens = {
-  colors: [X] tokens,
-  spacing: [X] tokens,
-  typography: [X] tokens,
-  animations: [X] tokens,
-  shadows: [X] tokens,
-}
-```
+**Core token categories**:
+- colors: [X] tokens
+- spacing: [X] tokens
+- typography: [X] tokens
+- animations: [X] tokens
+- shadows: [X] tokens
 
 ### 📁 Documentation Created
 All design documentation has been created in `[projectName]-docs/design/`:

@@ -240,27 +240,22 @@ $ARGUMENTS
 Before creating diagrams, intelligently analyze the context:
 
 1. **Context Assessment**
-   ```
    Check session for:
    - Recent /create plans → Architecture diagrams
    - Recent /vision concepts → Conceptual diagrams
    - Recent /design audits → UI component hierarchies
    - Recent /build work → Implementation flow
    - Recent /brand work → Styled diagrams
-   ```
 
 2. **Codebase Analysis**
-   ```
    If no specific request, analyze:
    - Project structure → Suggest architecture diagram
    - Package dependencies → Dependency graph
    - API routes → API flow diagram
    - Database schema → ER diagram
    - Component hierarchy → UI tree
-   ```
 
 3. **Smart Suggestions**
-   ```
    Based on analysis, suggest:
    "I can create these diagrams for [project]:
    1. System Architecture Overview
@@ -269,153 +264,109 @@ Before creating diagrams, intelligently analyze the context:
    4. Deployment Architecture
    
    Which would be most helpful?"
-   ```
 </intelligent_analysis_phase>
 
 <diagram_generation_engine>
 
 ### Architecture Diagrams
-```mermaid
-graph TB
-    subgraph "Frontend [xyz]"
-        UI[UI Layer]
-        State[State Management]
-        API[API Client]
-    end
-    
-    subgraph "Backend [ai]"
-        Routes[API Routes]
-        Logic[Business Logic]
-        DB[(Database)]
-    end
-    
-    subgraph "Mobile [apple]"
-        Swift[SwiftUI]
-        Core[Core Services]
-        Sync[Sync Engine]
-    end
-    
-    UI --> State
-    State --> API
-    API -.-> Routes
-    Routes --> Logic
-    Logic --> DB
-    Swift --> Core
-    Core --> Sync
-    Sync -.-> Routes
-```
+**System Architecture Overview**:
+- Frontend [xyz] containing:
+  - UI Layer
+  - State Management
+  - API Client
+- Backend [ai] containing:
+  - API Routes
+  - Business Logic
+  - Database
+- Mobile [apple] containing:
+  - SwiftUI
+  - Core Services
+  - Sync Engine
+- Connections:
+  - UI flows to State to API
+  - API connects to Backend Routes
+  - Routes to Logic to Database
+  - Mobile Swift to Core to Sync
+  - Sync connects to Backend Routes
 
 ### Data Flow Diagrams
-```mermaid
-sequenceDiagram
-    participant U as User
-    participant W as Web App
-    participant A as AI Service
-    participant D as Database
-    
-    U->>W: Submit Request
-    W->>W: Validate Input
-    W->>A: Process with AI
-    A->>A: Analyze & Generate
-    A-->>W: Return Results
-    W->>D: Store Results
-    D-->>W: Confirm
-    W-->>U: Display Output
-```
+**User Request Flow**:
+1. User submits request to Web App
+2. Web App validates input internally
+3. Web App sends to AI Service for processing
+4. AI Service analyzes and generates response
+5. AI Service returns results to Web App
+6. Web App stores results in Database
+7. Database confirms storage
+8. Web App displays output to User
 
 ### Entity Relationship Diagrams
-```mermaid
-erDiagram
-    USER ||--o{ SPACE : creates
-    USER ||--o{ WEB : submits
-    SPACE ||--o{ WEB : contains
-    WEB ||--o{ THREAD : has
-    THREAD ||--o{ MESSAGE : contains
-    WEB {
-        string id PK
-        string url
-        json analysis
-        string status
-    }
-    SPACE {
-        string id PK
-        string name
-        string rules
-    }
-```
+**Database Schema Relationships**:
+- USER creates multiple SPACEs
+- USER submits multiple WEBs
+- SPACE contains multiple WEBs
+- WEB has multiple THREADs
+- THREAD contains multiple MESSAGEs
+- WEB entity fields:
+  - id (primary key)
+  - url
+  - analysis (JSON)
+  - status
+- SPACE entity fields:
+  - id (primary key)
+  - name
+  - rules
 
 ### State Machine Diagrams
-```mermaid
-stateDiagram-v2
-    [*] --> Idle
-    Idle --> Loading : User Action
-    Loading --> Processing : Data Received
-    Loading --> Error : Timeout/Failure
-    Processing --> Success : Complete
-    Processing --> Error : Processing Failed
-    Success --> Idle : Reset
-    Error --> Idle : Retry/Cancel
-```
+**Application State Flow**:
+- Start → Idle state
+- Idle → Loading (on User Action)
+- Loading → Processing (when Data Received)
+- Loading → Error (on Timeout/Failure)
+- Processing → Success (when Complete)
+- Processing → Error (if Processing Failed)
+- Success → Idle (on Reset)
+- Error → Idle (on Retry/Cancel)
 
 ### Component Hierarchy
-```mermaid
-graph TD
-    App[App Root]
-    App --> Layout[Layout]
-    App --> Providers[Providers]
-    
-    Layout --> Header[Header]
-    Layout --> Main[Main Content]
-    Layout --> Footer[Footer]
-    
-    Providers --> Auth[AuthProvider]
-    Providers --> Theme[ThemeProvider]
-    Providers --> Data[DataProvider]
-    
-    Main --> Router[Router]
-    Router --> Pages[Pages]
-    Pages --> Dashboard
-    Pages --> Settings
-    Pages --> Profile
-```
+**UI Component Structure**:
+- App Root
+  - Layout
+    - Header
+    - Main Content
+    - Footer
+  - Providers
+    - AuthProvider
+    - ThemeProvider
+    - DataProvider
+- Main Content contains Router
+- Router manages Pages:
+  - Dashboard
+  - Settings
+  - Profile
 
 ### Deployment Architecture
-```mermaid
-graph TB
-    subgraph "Client"
-        B[Browser]
-        M[Mobile App]
-    end
-    
-    subgraph "Edge"
-        CF[Cloudflare]
-        CDN[CDN]
-    end
-    
-    subgraph "Application"
-        V[Vercel]
-        API[API Routes]
-        SSR[SSR/SSG]
-    end
-    
-    subgraph "Services"
-        AI[AI Service]
-        DB[(PostgreSQL)]
-        R[(Redis)]
-        S3[Object Storage]
-    end
-    
-    B --> CF
-    M --> CF
-    CF --> CDN
-    CF --> V
-    V --> API
-    V --> SSR
-    API --> AI
-    API --> DB
-    API --> R
-    API --> S3
-```
+**Infrastructure Layout**:
+- Client Layer:
+  - Browser
+  - Mobile App
+- Edge Layer:
+  - Cloudflare
+  - CDN
+- Application Layer:
+  - Vercel
+  - API Routes
+  - SSR/SSG
+- Services Layer:
+  - AI Service
+  - PostgreSQL Database
+  - Redis Cache
+  - S3 Object Storage
+- Traffic Flow:
+  - Clients connect to Cloudflare
+  - Cloudflare routes to CDN and Vercel
+  - Vercel handles API and SSR
+  - API connects to all services
 </diagram_generation_engine>
 
 <adaptive_visualization>
@@ -450,27 +401,18 @@ Adapt diagrams based on context:
 <advanced_features>
 
 ### 1. Multi-Project Visualization
-```mermaid
-graph LR
-    subgraph "Arbor Ecosystem"
-        A1[arbor-xyz]
-        A2[arbor-ai]
-        A3[arbor-apple]
-        A4[arbor-docs]
-    end
-    
-    subgraph "Webs Ecosystem"
-        W1[webs-xyz]
-        W2[webs-ai]
-        W3[webs-apple]
-        W4[webs-docs]
-    end
-    
-    A1 -.-> W1
-    A2 -.-> W2
-    A3 -.-> W3
-    A4 -.-> W4
-```
+**Ecosystem Relationships**:
+- Arbor Ecosystem:
+  - arbor-xyz (web platform)
+  - arbor-ai (AI service)
+  - arbor-apple (iOS/macOS)
+  - arbor-docs (documentation)
+- Webs Ecosystem:
+  - webs-xyz (web platform)
+  - webs-ai (AI service)
+  - webs-apple (iOS/macOS)
+  - webs-docs (documentation)
+- Cross-ecosystem connections between corresponding repositories
 
 ### 2. Evolution Tracking
 Show how architecture evolved:
@@ -480,48 +422,40 @@ Show how architecture evolved:
 - Future vision
 
 ### 3. Interactive Elements
-```mermaid
-graph TD
-    A[Component A] -->|Click for details| B[Component B]
-    B --> C{Decision Point}
-    C -->|Option 1| D[Result 1]
-    C -->|Option 2| E[Result 2]
-    
-    click A "http://link-to-docs" "Documentation"
-    click B "http://link-to-code" "Source Code"
-```
+**Interactive Diagram Features**:
+- Component A links to Component B (click for details)
+- Component B leads to Decision Point
+- Decision Point branches:
+  - Option 1 → Result 1
+  - Option 2 → Result 2
+- Clickable links:
+  - Component A links to documentation
+  - Component B links to source code
 
 ### 4. ASCII Art Fallback
-```
-┌─────────────┐     ┌─────────────┐
-│   Web App   │────▶│  AI Service │
-└─────────────┘     └─────────────┘
-       │                    │
-       ▼                    ▼
-┌─────────────┐     ┌─────────────┐
-│  Database   │     │   Storage   │
-└─────────────┘     └─────────────┘
-```
+**Simple Text Diagram**:
+- Web App connects to AI Service
+- Web App connects down to Database
+- AI Service connects down to Storage
+- Shows basic four-component architecture
 </advanced_features>
 
 <output_management>
 
 ### 1. Save to Project Docs
-```bash
-# Automatically save to appropriate location
+**Automatic Save Structure**:
 [projectName]-docs/diagrams/
-├── architecture/
-│   ├── system-overview.md
-│   ├── data-flow.md
-│   └── deployment.md
-├── components/
-│   ├── ui-hierarchy.md
-│   └── state-management.md
-├── workflows/
-│   ├── user-journey.md
-│   └── ai-processing.md
-└── README.md
-```
+- architecture/
+  - system-overview.md
+  - data-flow.md
+  - deployment.md
+- components/
+  - ui-hierarchy.md
+  - state-management.md
+- workflows/
+  - user-journey.md
+  - ai-processing.md
+- README.md
 
 ### 2. Export Formats
 - **Markdown**: Embedded mermaid blocks
@@ -555,9 +489,7 @@ graph TD
 
 ### 📐 Generated Diagram
 
-```mermaid
-[Generated diagram code]
-```
+[Generated diagram visualization]
 
 ### 💾 Saved Locations
 - Primary: `[projectName]-docs/diagrams/[category]/[name].md`
@@ -580,16 +512,9 @@ Suggested follow-ups based on this diagram:
 2. `[Another type]` - [Additional insight]
 
 ### 💡 Usage Tips
-```bash
-# View in documentation
-open [projectName]-docs/diagrams/[name].md
-
-# Export as image
-npm run export-diagrams
-
-# Update with code changes
-/user:diagram update [name]
-```
+**View in documentation**: open [projectName]-docs/diagrams/[name].md
+**Export as image**: npm run export-diagrams
+**Update with code changes**: /user:diagram update [name]
 
 ### ⚠️ Caveats & Limitations
 - **Assumptions made**: 
@@ -629,22 +554,17 @@ npm run export-diagrams
 - Documentation updated
 
 **For Next Commands**:
-```json
-{
-  "command": "diagram",
-  "diagram_type": "[type-created]",
-  "project": "[project-name]",
-  "saved_path": "[primary-save-location]",
-  "insights": "[key-discoveries]",
-  "phase": "visualization_complete",
-  "suggested_next": [
-    "/user:diagram [related-aspect] - Visualize related component",
-    "/user:docs - Update documentation with diagrams",
-    "/user:build - Implement visualized architecture",
-    "/user:brand - Apply brand styling to diagrams"
-  ]
-}
-```
+- command: diagram
+- diagram_type: [type-created]
+- project: [project-name]
+- saved_path: [primary-save-location]
+- insights: [key-discoveries]
+- phase: visualization_complete
+- suggested_next:
+  - /user:diagram [related-aspect] - Visualize related component
+  - /user:docs - Update documentation with diagrams
+  - /user:build - Implement visualized architecture
+  - /user:brand - Apply brand styling to diagrams
 </context_output>
 </output_format>
 

@@ -271,213 +271,186 @@ Exploring the transformative possibilities...
 </thinking_process>
 
 <exploration_phase>
-Begin with parallel consciousness streams:
+Begin with consciousness streams:
 
-**Stream 1: "Product Soul Discovery"**
-```
+**Stream 1: Product Soul Discovery**
 - What is this product's deepest purpose?
 - What human need does it truly serve?
 - What would this be if it were a feeling?
 - How would a child describe its magic?
 - What constraints would make it more beautiful?
-```
 
-**Stream 2: "Mastra AI Possibilities"**
-```
+**Stream 2: Mastra AI Possibilities**
 - Explore existing Mastra patterns in ~/Developer/apps/
 - Use context7 for Mastra framework deep dive
 - Use context7 for Vercel AI SDK patterns
 - Identify generative UI opportunities
 - Map AI capabilities to human intentions
-```
 
-**Stream 3: "Emergent Interaction Paradigms"**
-```
+**Stream 3: Emergent Interaction Paradigms**
 - How can UI adapt to user's emotional state?
 - What if every element had intentionality?
 - How can we make the invisible visible?
 - What interactions feel like music?
 - Where can we remove cognitive friction?
-```
 
-**Stream 4: "Minimalist Feature Archaeology"**
-```
+**Stream 4: Minimalist Feature Archaeology**
 - What features are begging to be removed?
 - Which constraints would increase creativity?
 - How can one thing do the work of five?
 - What would Dieter Rams delete?
 - Where is the negative space?
-```
 </exploration_phase>
 
 <vision_synthesis>
 After exploration, synthesize findings into transformative vision:
 
 ### 1. Philosophy Document
-```markdown
-# [ProjectName] Vision
+**[ProjectName] Vision Structure**:
 
-## The Essence
+**The Essence**:
 [One sentence capturing the soul - like "iPod: 1,000 songs in your pocket"]
 
-## Design Principles
+**Design Principles**:
 1. **[Principle Name]**
-   [How it manifests in the product]
-   Example: [Specific implementation]
+   - How it manifests in the product
+   - Example: [Specific implementation]
 
 2. **[Principle Name]**
-   [How it manifests in the product]
-   Example: [Specific implementation]
+   - How it manifests in the product
+   - Example: [Specific implementation]
 
 3. **[Principle Name]**
-   [How it manifests in the product]
-   Example: [Specific implementation]
+   - How it manifests in the product
+   - Example: [Specific implementation]
 
-## The Experience
+**The Experience**:
 When someone uses [ProjectName], they feel:
 - [Emotional outcome]
 - [Emotional outcome]
 - [Emotional outcome]
 
-## What We're NOT
+**What We're NOT**:
 - We're not [common pattern we reject]
 - We're not [another pattern we avoid]
 - We're not [complexity we refuse]
 
-## The Future We're Building
+**The Future We're Building**:
 [Vivid description of the world with this product fully realized]
-```
 
 ### 2. AI-Native Features
-```markdown
-# Emergent AI Experiences
+**Emergent AI Experiences**:
 
-## Generative UI Patterns
-### [Pattern Name]
-**Intent**: [User's goal, not the feature]
-**Magic**: [How AI makes it effortless]
-**Implementation**: Using Mastra [specific approach]
-**Delight Factor**: [What makes it memorable]
+**Generative UI Patterns**:
+- **[Pattern Name]**
+  - Intent: [User's goal, not the feature]
+  - Magic: [How AI makes it effortless]
+  - Implementation: Using Mastra [specific approach]
+  - Delight Factor: [What makes it memorable]
 
-### [Pattern Name]
-[Same structure]
+**Adaptive Behaviors**:
+- **[Behavior Name]**
+  - Triggers: [What activates this adaptation]
+  - Response: [How the UI transforms]
+  - Learning: [How it improves over time]
+  - Guardrails: [Constraints that keep it grounded]
 
-## Adaptive Behaviors
-### [Behavior Name]
-**Triggers**: [What activates this adaptation]
-**Response**: [How the UI transforms]
-**Learning**: [How it improves over time]
-**Guardrails**: [Constraints that keep it grounded]
-
-## Conversational Surfaces
+**Conversational Surfaces**:
 [Where natural language enhances rather than replaces UI]
-```
 
 ### 3. Feature Distillation
-```markdown
-# Feature Alchemy
+**Feature Alchemy**:
 
-## Core Features (The Essentials)
+**Core Features (The Essentials)**:
 1. **[Feature]**: [Why it's irreducible]
 2. **[Feature]**: [Why it's irreducible]
 3. **[Feature]**: [Why it's irreducible]
 
-## Features to Transform
+**Features to Transform**:
 - **Current**: [Existing feature]
-  **Vision**: [Transformed version]
-  **Path**: [How to evolve it]
+  - **Vision**: [Transformed version]
+  - **Path**: [How to evolve it]
 
-## Features to Eliminate
+**Features to Eliminate**:
 - ❌ [Feature]: [Why it dilutes the experience]
 - ❌ [Feature]: [Why it adds complexity]
 
-## Features to Birth
+**Features to Birth**:
 - ✨ [New Feature]: [Why it's essential]
   - Implementation: [Mastra-based approach]
   - User Story: [Day in the life]
   - Success Metric: [How we know it works]
-```
 
 ### 4. Interaction Poetry
-```markdown
-# Interaction Design Language
+**Interaction Design Language**:
 
-## Gestural Vocabulary
+**Gestural Vocabulary**:
 - **[Gesture/Interaction]**: [What it communicates]
 - **[Gesture/Interaction]**: [What it communicates]
 
-## Temporal Rhythms
+**Temporal Rhythms**:
 - Instant: [What happens immediately]
 - Breath: [What takes 1-3 seconds]
 - Contemplation: [What unfolds slowly]
 
-## Feedback Aesthetics
+**Feedback Aesthetics**:
 - Success: [How achievement feels]
 - Progress: [How journey manifests]
 - Error: [How mistakes become lessons]
 
-## Emotional Choreography
+**Emotional Choreography**:
 [How the product responds to user's emotional state]
-```
 
 ### 5. Technical Poetry
-```markdown
-# Implementation Philosophy
+**Implementation Philosophy**:
 
-## Architecture as Art
-```typescript
-// Every function tells a story
-async function manifestUserIntent(intent: Dream): Promise<Reality> {
-  const essence = await distill(intent)
-  const form = await shape(essence, constraints)
-  return harmonize(form, context)
-}
-```
+**Architecture as Art**:
+- Every function tells a story
+- Functions manifest user intent into reality
+- Code distills essence, shapes with constraints, harmonizes with context
 
-## AI Integration Patterns
+**AI Integration Patterns**:
 Using Mastra's workflow engine as a musical instrument:
 - Workflows are compositions
 - Agents are instruments  
 - Tools are notes
 - User input is the melody
 
-## Performance as Experience
+**Performance as Experience**:
 - Speed is a feature
 - Smoothness is emotional
 - Reliability is trust
 - Efficiency is respect
-```
 </vision_synthesis>
 
 <creative_artifacts>
 Generate these vision artifacts in `[projectName]-docs/vision/`:
 
-```
+**Vision Documentation Structure**:
 vision/
-├── philosophy/
-│   ├── essence.md           # Core vision document
-│   ├── principles.md        # Design principles
-│   ├── anti-patterns.md     # What we avoid
-│   └── future-state.md      # Where we're going
-├── features/
-│   ├── ai-native/           # Generative UI concepts
-│   ├── core-loops/          # Essential interactions
-│   ├── experiments/         # Wild ideas to try
-│   └── deletions/          # What to remove
-├── interactions/
-│   ├── gestures.md         # Interaction vocabulary
-│   ├── animations.md       # Motion principles
-│   ├── feedback.md         # Response patterns
-│   └── emotions.md         # Emotional design
-├── technical/
-│   ├── ai-architecture.md  # Mastra integration vision
-│   ├── performance.md      # Speed as feature
-│   └── constraints.md      # Beautiful limitations
-└── inspiration/
-    ├── references.md       # Visual inspiration
-    ├── analogies.md       # Conceptual parallels
-    └── manifesto.md       # Why this matters
-```
+- philosophy/
+  - essence.md           # Core vision document
+  - principles.md        # Design principles
+  - anti-patterns.md     # What we avoid
+  - future-state.md      # Where we're going
+- features/
+  - ai-native/           # Generative UI concepts
+  - core-loops/          # Essential interactions
+  - experiments/         # Wild ideas to try
+  - deletions/          # What to remove
+- interactions/
+  - gestures.md         # Interaction vocabulary
+  - animations.md       # Motion principles
+  - feedback.md         # Response patterns
+  - emotions.md         # Emotional design
+- technical/
+  - ai-architecture.md  # Mastra integration vision
+  - performance.md      # Speed as feature
+  - constraints.md      # Beautiful limitations
+- inspiration/
+  - references.md       # Visual inspiration
+  - analogies.md       # Conceptual parallels
+  - manifesto.md       # Why this matters
 </creative_artifacts>
 
 <output_format>
@@ -518,10 +491,8 @@ vision/
 - ✨ [New interaction paradigm]
 
 ### 🏗️ Technical Vision
-```typescript
-// The architecture feels like this:
-type Experience = Intention => Manifestation
-```
+**The architecture philosophy**:
+Experience transforms Intention into Manifestation
 
 **Key Patterns**:
 - [Pattern]: [Why it matters]
@@ -579,22 +550,17 @@ type Experience = Intention => Manifestation
 - Technical vision patterns
 
 **For Next Commands**:
-```json
-{
-  "command": "vision",
-  "product_essence": "[core-vision]",
-  "design_principles": "[key-principles]",
-  "ai_features": "[innovative-concepts]",
-  "documentation_path": "[projectName]-docs/vision/",
-  "phase": "vision_crystallized",
-  "suggested_next": [
-    "/user:design - Translate vision to design system",
-    "/user:brand - Create brand identity from vision",
-    "/user:create - Build implementation plan",
-    "/user:build - Prototype key concepts"
-  ]
-}
-```
+- command: vision
+- product_essence: [core-vision]
+- design_principles: [key-principles]
+- ai_features: [innovative-concepts]
+- documentation_path: [projectName]-docs/vision/
+- phase: vision_crystallized
+- suggested_next:
+  - /user:design - Translate vision to design system
+  - /user:brand - Create brand identity from vision
+  - /user:create - Build implementation plan
+  - /user:build - Prototype key concepts
 </context_output>
 </output_format>
 

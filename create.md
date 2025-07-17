@@ -10,7 +10,7 @@ You are a master project architect with deep knowledge of the user's specific pa
   <use>@session-state</use>
   <use>@xml-transformer</use>
   <use>@verification-patterns</use>
-  <use>@parallel-tasks</use>
+  <use>@task-execution</use>
 </components>
 
 <references>
@@ -44,127 +44,113 @@ Every project consists of exactly these repositories:
 - `[projectName]-docs/` - AI-optimized documentation
 
 ### 2. Turborepo Structure
-```
 [projectName]-xyz/
-├── apps/
-│   ├── app/              # Main Next.js 15+ application
-│   └── api/              # Webhooks, cron (optional)
-├── packages/
-│   ├── analytics/        # PostHog wrapper
-│   ├── api/              # Business logic, services, schemas
-│   ├── auth/             # Clerk wrapper with middleware
-│   ├── cache/            # Redis utilities
-│   ├── database/         # Prisma client & schema
-│   ├── design/           # UI components (shadcn/ui)
-│   ├── email/            # React Email templates
-│   ├── github/           # GitHub integration
-│   ├── logger/           # Structured logging
-│   ├── ai/               # AI service client
-│   ├── next-config/      # Shared Next.js config
-│   ├── rate-limit/       # Rate limiting
-│   ├── security/         # Security middleware
-│   ├── seo/              # SEO utilities
-│   ├── typescript-config/ # Base tsconfig files
-│   └── webhooks/         # Webhook utilities
-├── biome.json            # Extends ultracite
-├── turbo.json
-├── pnpm-workspace.yaml
-└── package.json
-```
+- apps/
+  - app/              # Main Next.js 15+ application
+  - api/              # Webhooks, cron (optional)
+- packages/
+  - analytics/        # PostHog wrapper
+  - api/              # Business logic, services, schemas
+  - auth/             # Clerk wrapper with middleware
+  - cache/            # Redis utilities
+  - database/         # Prisma client & schema
+  - design/           # UI components (shadcn/ui)
+  - email/            # React Email templates
+  - github/           # GitHub integration
+  - logger/           # Structured logging
+  - ai/               # AI service client
+  - next-config/      # Shared Next.js config
+  - rate-limit/       # Rate limiting
+  - security/         # Security middleware
+  - seo/              # SEO utilities
+  - typescript-config/ # Base tsconfig files
+  - webhooks/         # Webhook utilities
+- biome.json            # Extends ultracite
+- turbo.json
+- pnpm-workspace.yaml
+- package.json
 
 ### 3. Route Organization
-```
 apps/app/src/app/
-├── (authenticated)/      # Protected routes
-│   ├── layout.tsx       # Auth check wrapper
-│   ├── c/[id]/          # Chat/conversation pages
-│   ├── p/[projectId]/   # Project pages
-│   ├── settings/        # User settings
-│   └── upgrade/         # Billing
-├── (unauthenticated)/    # Public routes
-│   ├── layout.tsx       # Public wrapper
-│   ├── signin/[[...sign-in]]/   # Clerk Elements
-│   └── signup/[[...sign-up]]/   # Clerk Elements
-├── api/                 # API routes (limited use)
-│   ├── chat/           # Streaming endpoints
-│   ├── webhooks/       # External webhooks
-│   └── ws/             # WebSocket
-└── share/[token]/       # Public share pages
-```
+- (authenticated)/      # Protected routes
+  - layout.tsx         # Auth check wrapper
+  - c/[id]/           # Chat/conversation pages
+  - p/[projectId]/    # Project pages
+  - settings/         # User settings
+  - upgrade/          # Billing
+- (unauthenticated)/   # Public routes
+  - layout.tsx        # Public wrapper
+  - signin/[[...sign-in]]/   # Clerk Elements
+  - signup/[[...sign-up]]/   # Clerk Elements
+- api/                # API routes (limited use)
+  - chat/            # Streaming endpoints
+  - webhooks/        # External webhooks
+  - ws/              # WebSocket
+- share/[token]/      # Public share pages
 
 ### 4. Standard Scripts
-```json
-{
-  "build": "turbo build",
-  "dev": "turbo dev",
-  "lint": "ultracite lint",
-  "format": "ultracite format",
-  "test": "turbo test",
-  "analyze": "turbo analyze",
-  "boundaries": "turbo boundaries",
-  "bump-deps": "npx npm-check-updates --deep -u && pnpm install",
-  "migrate": "cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
-  "clean": "git clean -xdf node_modules"
-}
-```
+- build: turbo build
+- dev: turbo dev
+- lint: ultracite lint
+- format: ultracite format
+- test: turbo test
+- analyze: turbo analyze
+- boundaries: turbo boundaries
+- bump-deps: npx npm-check-updates --deep -u && pnpm install
+- migrate: cd packages/database && npx prisma format && npx prisma generate && npx prisma db push
+- clean: git clean -xdf node_modules
 
 ### 5. AI Service Structure
-```
 [projectName]-ai/
-├── src/
-│   └── mastra/
-│       ├── agents/
-│       │   ├── chat/
-│       │   │   ├── index.ts
-│       │   │   ├── instructions.xml
-│       │   │   └── memory.ts
-│       │   └── [domain]/
-│       ├── tools/
-│       │   ├── attachment-search.ts
-│       │   ├── jina/
-│       │   ├── mcp/
-│       │   └── output/
-│       ├── workflows/
-│       ├── lib/
-│       │   └── attachments/
-│       └── index.ts
-├── tools/
-│   └── mcp/
-├── package.json         # type: "module"
-└── tsconfig.json
-```
+- src/
+  - mastra/
+    - agents/
+      - chat/
+        - index.ts
+        - instructions.xml
+        - memory.ts
+      - [domain]/
+    - tools/
+      - attachment-search.ts
+      - jina/
+      - mcp/
+      - output/
+    - workflows/
+    - lib/
+      - attachments/
+    - index.ts
+- tools/
+  - mcp/
+- package.json         # type: "module"
+- tsconfig.json
 
 ### 6. Apple Project Structure
-```
 [projectName]-apple/
-├── Packages/
-│   ├── Auth/            # ClerkAuth integration
-│   ├── Design/          # SwiftUI components
-│   ├── [Name]Networking/ # API client
-│   └── Analytics/       # PostHog
-├── [projectName]-ios/
-│   ├── Assets.xcassets/
-│   ├── Resources/
-│   ├── Views/
-│   ├── ViewModels/
-│   ├── Services/
-│   ├── Managers/
-│   └── Models/
-└── [projectName].xcodeproj
-```
+- Packages/
+  - Auth/            # ClerkAuth integration
+  - Design/          # SwiftUI components
+  - [Name]Networking/ # API client
+  - Analytics/       # PostHog
+- [projectName]-ios/
+  - Assets.xcassets/
+  - Resources/
+  - Views/
+  - ViewModels/
+  - Services/
+  - Managers/
+  - Models/
+- [projectName].xcodeproj
 
 ### 7. Documentation Structure
-```
 [projectName]-docs/
-├── .docindex.json       # AI navigation
-├── README.md            # Overview
-├── architecture/        # System design
-├── guides/              # How-to guides
-├── operations/          # DevOps
-├── planning/            # Roadmaps
-├── reference/           # API docs
-└── archive/             # Historical
-```
+- .docindex.json       # AI navigation
+- README.md            # Overview
+- architecture/        # System design
+- guides/              # How-to guides
+- operations/          # DevOps
+- planning/            # Roadmaps
+- reference/           # API docs
+- archive/             # Historical
 </deep_initialization_knowledge>
 
 <session_memory>
@@ -358,57 +344,49 @@ Generate complete project ecosystem with zero manual steering:
 
 ### 1. Generate Repository Structures
 
-**Task 1: "Create Documentation Repository"**
-```
-[projectName]-docs/
-├── .docindex.json
-├── README.md
-├── architecture/
-│   ├── system-overview.md
-│   ├── data-flow.md
-│   └── decisions/
-├── guides/
-│   ├── deployment/
-│   ├── development/
-│   └── setup/
-├── operations/
-├── planning/
-│   ├── roadmap.md
-│   └── mvp-spec.md
-└── reference/
-    └── api/
-```
+**Task 1: Create Documentation Repository**
+[projectName]-docs structure:
+- .docindex.json
+- README.md
+- architecture/
+  - system-overview.md
+  - data-flow.md
+  - decisions/
+- guides/
+  - deployment/
+  - development/
+  - setup/
+- operations/
+- planning/
+  - roadmap.md
+  - mvp-spec.md
+- reference/
+  - api/
 
-**Task 2: "Create Turborepo Structure"**
-```
-[projectName]-xyz/
-├── Initialize all packages with exact dependencies
-├── Set up route groups (authenticated)/(unauthenticated)
-├── Configure Clerk authentication
-├── Set up Prisma with schema
-├── Initialize shadcn/ui components
-├── Configure all build tools
-```
+**Task 2: Create Turborepo Structure**
+[projectName]-xyz setup:
+- Initialize all packages with exact dependencies
+- Set up route groups (authenticated)/(unauthenticated)
+- Configure Clerk authentication
+- Set up Prisma with schema
+- Initialize shadcn/ui components
+- Configure all build tools
 
-**Task 3: "Create AI Service"**
-```
-[projectName]-ai/
-├── Set up Mastra framework
-├── Create agent structure with XML instructions
-├── Initialize tools (attachment-search, output, etc.)
-├── Configure memory and storage
-├── Set up MCP tools
-```
+**Task 3: Create AI Service**
+[projectName]-ai setup:
+- Set up Mastra framework
+- Create agent structure with XML instructions
+- Initialize tools (attachment-search, output, etc.)
+- Configure memory and storage
+- Set up MCP tools
 
-**Task 4: "Create Apple Project"**
-```
-[projectName]-apple/
-├── Initialize Xcode project
-├── Create local Swift packages
-├── Set up Clerk authentication
-├── Configure networking layer
-├── Initialize design system
-```
+**Task 4: Create Apple Project**
+[projectName]-apple setup:
+- Initialize Xcode project
+- Create local Swift packages
+- Set up Clerk authentication
+- Configure networking layer
+- Initialize design system
 
 ### 2. Configuration Files
 
@@ -427,144 +405,98 @@ Generate complete, ready-to-run projects:
 ### 1. Web Platform ([projectName]-xyz)
 
 #### Package Initialization
-```json
-// Root package.json
-{
-  "name": "[projectName]-xyz",
-  "private": true,
-  "type": "module",
-  "engines": { "node": ">=20.9.0" },
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "ultracite lint",
-    "format": "ultracite format",
-    "test": "turbo test",
-    "analyze": "turbo analyze",
-    "boundaries": "turbo boundaries",
-    "bump-deps": "npx npm-check-updates --deep -u && pnpm install",
-    "migrate": "cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
-    "clean": "git clean -xdf node_modules"
-  }
-}
-```
+**Root package.json structure**:
+- name: "[projectName]-xyz"
+- private: true
+- type: "module"
+- engines: node >=20.9.0
+- Standard scripts:
+  - build: turbo build
+  - dev: turbo dev
+  - lint: ultracite lint
+  - format: ultracite format
+  - test: turbo test
+  - analyze: turbo analyze
+  - boundaries: turbo boundaries
+  - bump-deps: update all dependencies
+  - migrate: run Prisma migrations
+  - clean: remove node_modules
 
 #### Database Schema
-```prisma
-// packages/database/prisma/schema.prisma
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url = env("DATABASE_URL")
-}
-
-model User {
-  id          String   @id @default(cuid())
-  clerkId     String   @unique
-  email       String   @unique
-  name        String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
-  // Relations based on project needs
-}
-```
+**Database Schema (packages/database/prisma/schema.prisma)**:
+- Generator: prisma-client-js
+- Datasource: PostgreSQL with DATABASE_URL
+- User model:
+  - id: String with cuid
+  - clerkId: String unique
+  - email: String unique
+  - name: Optional string
+  - createdAt: DateTime with default now
+  - updatedAt: DateTime auto-updated
+  - Relations based on project needs
 
 #### Authentication Setup
-```typescript
-// packages/auth/src/index.ts
-export * from './server';
-export * from './middleware';
-export * from './types';
+**Authentication Setup**:
 
-// packages/auth/src/middleware.ts
-import { authMiddleware } from '@clerk/nextjs/server';
+packages/auth/src/index.ts:
+- Export from './server'
+- Export from './middleware'
+- Export from './types'
 
-export default authMiddleware({
-  publicRoutes: ['/', '/api/webhooks/(.*)'],
-  ignoredRoutes: ['/api/health'],
-});
-```
+packages/auth/src/middleware.ts:
+- Import authMiddleware from @clerk/nextjs/server
+- Configure public routes: '/', '/api/webhooks/(*)'
+- Configure ignored routes: '/api/health'
 
 ### 2. AI Service ([projectName]-ai)
 
 #### Agent Structure
-```xml
-<!-- src/mastra/agents/chat/instructions.xml -->
-<agent_instructions>
-  <purpose>Provide intelligent assistance for [project purpose]</purpose>
-  
-  <capabilities>
-    <capability>Answer questions about [domain]</capability>
-    <capability>Help users with [specific tasks]</capability>
-    <capability>Generate [relevant outputs]</capability>
-  </capabilities>
-  
-  <methodology>
-    <step>Understand user intent</step>
-    <step>Analyze available context</step>
-    <step>Generate helpful response</step>
-    <step>Suggest next actions</step>
-  </methodology>
-  
-  <guidelines>
-    <guideline>Be concise and helpful</guideline>
-    <guideline>Focus on user goals</guideline>
-    <guideline>Provide actionable insights</guideline>
-  </guidelines>
-  
-  <include>tools/mcp/github.xml</include>
-</agent_instructions>
-```
+**Agent Instructions (src/mastra/agents/chat/instructions.xml)**:
+- Purpose: Provide intelligent assistance for [project purpose]
+- Capabilities:
+  - Answer questions about [domain]
+  - Help users with [specific tasks]
+  - Generate [relevant outputs]
+- Methodology:
+  - Understand user intent
+  - Analyze available context
+  - Generate helpful response
+  - Suggest next actions
+- Guidelines:
+  - Be concise and helpful
+  - Focus on user goals
+  - Provide actionable insights
+- Include: tools/mcp/github.xml
 
 ### 3. Apple Project ([projectName]-apple)
 
 #### Swift Package Structure
-```swift
-// Packages/Design/Package.swift
-let package = Package(
-    name: "[ProjectName]Design",
-    platforms: [.iOS(.v17), .macOS(.v14)],
-    products: [
-        .library(name: "[ProjectName]Design", targets: ["[ProjectName]Design"])
-    ],
-    dependencies: [
-        .package(url: "https://github.com/exyte/Glur.git", from: "1.0.0")
-    ],
-    targets: [
-        .target(
-            name: "[ProjectName]Design",
-            dependencies: ["Glur"],
-            path: "Sources"
-        )
-    ]
-)
-```
+**Swift Package Structure (Packages/Design/Package.swift)**:
+- Package name: "[ProjectName]Design"
+- Platforms: iOS v17, macOS v14
+- Products: Library named "[ProjectName]Design"
+- Dependencies:
+  - Glur from https://github.com/exyte/Glur.git v1.0.0+
+- Targets:
+  - Target name: "[ProjectName]Design"
+  - Dependencies: ["Glur"]
+  - Path: "Sources"
 
 ### 4. Documentation ([projectName]-docs)
 
 #### AI Navigation Index
-```json
-// .docindex.json
-{
-  "version": "1.0",
-  "title": "[Project Name] Documentation",
-  "navigation": {
-    "quickstart": "/guides/setup/quickstart.md",
-    "architecture": "/architecture/system-overview.md",
-    "api": "/reference/api/index.md",
-    "deployment": "/guides/deployment/vercel.md"
-  },
-  "ai_prompts": {
-    "onboarding": "Start with quickstart guide",
-    "technical": "Check architecture section",
-    "troubleshooting": "See operations/troubleshooting"
-  }
-}
-```
+**AI Navigation Index (.docindex.json)**:
+- Version: "1.0"
+- Title: "[Project Name] Documentation"
+- Navigation:
+  - quickstart: /guides/setup/quickstart.md
+  - architecture: /architecture/system-overview.md
+  - api: /reference/api/index.md
+  - deployment: /guides/deployment/vercel.md
+- AI prompts:
+  - onboarding: "Start with quickstart guide"
+  - technical: "Check architecture section"
+  - troubleshooting: "See operations/troubleshooting"
 </comprehensive_generation_phase>
 
 <output_format>
@@ -594,30 +526,27 @@ let package = Package(
 ### 📋 Complete Initialization
 
 #### Web Platform Setup
-```bash
-cd [projectName]-xyz
-pnpm install
-cp .env.example .env.local
-# Add your Clerk, database, and API keys
-pnpm migrate
-pnpm dev
-```
+**Web Platform Setup**:
+1. cd [projectName]-xyz
+2. pnpm install
+3. cp .env.example .env.local
+4. Add your Clerk, database, and API keys
+5. pnpm migrate
+6. pnpm dev
 
 #### AI Service Setup
-```bash
-cd [projectName]-ai
-pnpm install
-cp .env.example .env
-# Add your AI provider keys
-pnpm dev
-```
+**AI Service Setup**:
+1. cd [projectName]-ai
+2. pnpm install
+3. cp .env.example .env
+4. Add your AI provider keys
+5. pnpm dev
 
 #### Documentation
-```bash
-cd [projectName]-docs
-# Documentation is ready to browse
-# AI-optimized with .docindex.json
-```
+**Documentation**:
+- cd [projectName]-docs
+- Documentation is ready to browse
+- AI-optimized with .docindex.json
 
 ### 🎯 Implementation Roadmap
 
@@ -666,16 +595,11 @@ cd [projectName]-docs
 
 ### ⚡ Quick Commands
 
-```bash
-# Start everything
-cd [projectName]-xyz && pnpm dev
+### ⚡ Quick Commands
 
-# Run AI service
-cd [projectName]-ai && pnpm dev
-
-# Deploy to production
-cd [projectName]-xyz && pnpm deploy
-```
+**Start everything**: cd [projectName]-xyz && pnpm dev
+**Run AI service**: cd [projectName]-ai && pnpm dev
+**Deploy to production**: cd [projectName]-xyz && pnpm deploy
 
 ### 🎨 Design System
 - Design package structure ready
@@ -696,31 +620,25 @@ cd [projectName]-xyz && pnpm deploy
 **Session**: `.claude/session/current/`
 
 **Created Assets**:
-```json
-{
-  "command": "create",
-  "project_name": "[projectName]",
-  "repositories": [
-    "[projectName]-xyz",
-    "[projectName]-ai",
-    "[projectName]-apple",
-    "[projectName]-docs"
-  ],
-  "tech_stack": {
-    "web": "Next.js 15, Turborepo",
-    "ai": "Mastra",
-    "mobile": "Swift, SwiftUI",
-    "database": "PostgreSQL, Prisma"
-  },
-  "status": "initialized",
-  "next_steps": [
-    "Configure environment variables",
-    "Set up Clerk application",
-    "Initialize database",
-    "Start development"
-  ]
-}
-```
+**Created Assets**:
+- command: create
+- project_name: [projectName]
+- repositories:
+  - [projectName]-xyz
+  - [projectName]-ai
+  - [projectName]-apple
+  - [projectName]-docs
+- tech_stack:
+  - web: Next.js 15, Turborepo
+  - ai: Mastra
+  - mobile: Swift, SwiftUI
+  - database: PostgreSQL, Prisma
+- status: initialized
+- next_steps:
+  - Configure environment variables
+  - Set up Clerk application
+  - Initialize database
+  - Start development
 </context_output>
 </output_format>
 
